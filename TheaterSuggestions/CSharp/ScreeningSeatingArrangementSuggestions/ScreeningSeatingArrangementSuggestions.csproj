@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <LangVersion>12</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>SeatsSuggestions</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ExternalDependencies\ExternalDependencies.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Value" Version="1.1.0.1" />
+    </ItemGroup>
+
+</Project>
