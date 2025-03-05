@@ -78,12 +78,13 @@ public void offer_seats_from_the_middle_of_the_row_when_the_row_size_is_even_and
     SeatingPlace a10 = new SeatingPlace("A", 10, PricingCategory.SECOND, SeatingPlaceAvailability.AVAILABLE);
 
     Row row = new Row("A", new ArrayList<>(Arrays.asList(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)));
-    List<SeatingPlace> seatingPlaces = offerSeatsNearerTheMiddleOfTheRow(row).stream().limit(partySize).collect(Collectors.toList());
+    List<SeatingPlace> seatingPlaces = offerSeatsNearerTheMiddleOfTheRow(row, PricingCategory.IGNORED)
+        .stream().limit(partySize).collect(Collectors.toList());
     assertThat(seatingPlaces).containsExactly(a5, a6);
 }
 
 // Deep Modeling: probing the code should start with a prototype.
-public List<SeatingPlace> offerSeatsNearerTheMiddleOfTheRow(Row row) {
+public List<SeatingPlace> offerSeatsNearerTheMiddleOfTheRow(Row row, PricingCategory pricingCategory) {
     // TODO: Implement your logic here
     return new ArrayList<>();
 }
@@ -110,14 +111,15 @@ public void Offer_seating_places_from_the_middle_of_the_row_when_the_row_size_is
 
     var row = new Row("A", new List<SeatingPlace> { a1, a2, a3, a4, a5, a6, a7, a8, a9, a10 });
 
-    var seatingPlaces = OfferSeatsNearerTheMiddleOfTheRow(row).Take(partySize);
+    var seatingPlaces = OfferSeatsNearerTheMiddleOfTheRow(row, PricingCategory.Ignored)
+        .Take(partySize);
 
     Check.That(seatingPlaces)
         .ContainsExactly(a5, a6);
 }
 
 // Deep Modeling: probing the code should start with a prototype.
-private IEnumerable<SeatingPlace> OfferSeatsNearerTheMiddleOfTheRow(Row row)
+private IEnumerable<SeatingPlace> OfferSeatsNearerTheMiddleOfTheRow(Row row, PricingCategory pricingCategory)
 {
     // Deep Modeling: probing the code should start with a prototype.
     return new List<SeatingPlace>();
@@ -158,7 +160,7 @@ public void Offer_adjacent_seats_nearer_the_middle_of_the_row_when_the_middle_is
     Row row = new Row("A",  new ArrayList<>(Arrays.asList(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10 )));
 
     List<SeatingPlace> seatingPlaces =
-            new OfferingSeatsNearerMiddleOfTheRow(row).offerSeatsNearerTheMiddleOfTheRow(5);
+            new OfferingSeatsNearerMiddleOfTheRow(row).offerSeatsNearerTheMiddleOfTheRow(PricingCategory.PricingCategory.IGNORED)
     
     List<SeatingPlace> seatingPlaces = OfferAdjacentSeats(seatsWithDistance, partySize);
 
@@ -196,15 +198,16 @@ public void Offer_adjacent_seats_nearer_the_middle_of_the_row_when_the_middle_is
     var row = new Row("A", new List<SeatingPlace> { a1, a2, a3, a4, a5, a6, a7, a8, a9, a10 });
 
 
-
     var seatingPlaces =
-        OfferingSeatsNearerMiddleOfTheRow.OfferSeatsNearerTheMiddleOfTheRow(row);
+        OfferingSeatsNearerMiddleOfTheRow(row)
+        	.OfferSeatsNearerTheMiddleOfTheRow(PricingCategory.Ignored);
 
     var seats =
         OfferAdjacentSeats(seatingPlaces, partySize);
 
     Check.That(seats).ContainsExactly(a5, a6, a7);
 }
+
 // Deep Modeling: probing the code should start with a prototype.
 public IEnumerable<SeatingPlace> OfferAdjacentSeats(IEnumerable<SeatingPlace> seatingPlaces, int partySize)
 {
