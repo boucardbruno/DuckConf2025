@@ -9,7 +9,7 @@ public class SeatingPlace(
     public string RowName { get; } = rowName;
     public int Number { get; } = number;
     public PricingCategory PricingCategory { get; } = pricingCategory;
-    private SeatingPlaceAvailability SeatingPlaceAvailability { get; set; } = seatingPlaceAvailability;
+    public SeatingPlaceAvailability SeatingPlaceAvailability { get; set; } = seatingPlaceAvailability;
 
     public bool IsAvailable()
     {
