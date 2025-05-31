@@ -9,14 +9,14 @@ public class Row(string name, List<SeatingPlace> seats) : ValueType<Row>
 
     public SeatingOptionIsSuggested SuggestSeatingOption(int partyRequested, PricingCategory pricingCategory)
     { 
-        var seatAllocation = new SeatingOptionIsSuggested(partyRequested, pricingCategory);
+        var seatingOptionIsSuggested = new SeatingOptionIsSuggested(partyRequested, pricingCategory);
         
         foreach (var seat in SeatingPlaces)
         {
             if (seat.IsAvailable() && seat.MatchCategory(pricingCategory))
             {
-                seatAllocation.AddSeat(seat);
-                if (seatAllocation.MatchExpectation()) return seatAllocation;
+                seatingOptionIsSuggested.AddSeat(seat);
+                if (seatingOptionIsSuggested.MatchExpectation()) return seatingOptionIsSuggested;
             }
         }
         return new SeatingOptionIsNotAvailable(partyRequested, pricingCategory);
