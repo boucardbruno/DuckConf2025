@@ -36,7 +36,9 @@ La règle visant à placer les spectateurs vers le milieu de la rangée a pour o
 
 Nous proposons de traiter cette règle via un prototype afin de rester aussi indépendant que possible du code existant. Le nouveau code sera intégré une fois qu’il aura été testé et qu’il sera opérationnel.
 
-**Avant de mettre en œuvre la règle du placement au milieu de la rangée, assurez-vous d’avoir vu son illustration avec l’expert du domaine.**
+**Avant de mettre en œuvre la règle du placement au milieu de la rangée, assurez-vous d’avoir vu son illustration avec l’expert du domaine.** 
+
+Bon courage.
 
 Commencez par une rangée de taille 10, correspondant à un cas pair.
 
