@@ -38,8 +38,6 @@ Nous proposons de traiter cette règle via un prototype afin de rester aussi ind
 
 **Avant de mettre en œuvre la règle du placement au milieu de la rangée, assurez-vous d’avoir vu son illustration avec l’expert du domaine.** 
 
-Bon courage.
-
 Commencez par une rangée de taille 10, correspondant à un cas pair.
 
 ##### In RowTest.java
